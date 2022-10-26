@@ -10,4 +10,7 @@ export const StyledButton = styled.button`
   color:${THEME.light.colors.secondary4};
   padding: 17px 0px;
   border: none;
+  &:hover{
+    background-color: ${THEME.light.colors.primary5};
+  }
 `;
