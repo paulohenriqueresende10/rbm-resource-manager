@@ -6,10 +6,7 @@ export default function Main({
     children,
     ...restProps
   }: MainPropsInterface){
-    return(
-        <>
-            <Styled.GlobalStyle/>
-            <Styled.StyledMain {...restProps}>{children}</Styled.StyledMain>
-        </>
+    return(   
+      <Styled.StyledMain {...restProps}>{children}</Styled.StyledMain>
     )
 }

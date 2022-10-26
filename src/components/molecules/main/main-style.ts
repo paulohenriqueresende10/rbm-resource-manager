@@ -1,16 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
-
-export const GlobalStyle = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-    *{
-        padding: 0;
-        margin: 0;
-    }
-    body, html, #root {
-        height: 100%;
-        font-family: poppins, sans-serif;
-    };
-`;
+import styled from "styled-components";
 
 
 export const StyledMain = styled.main`
