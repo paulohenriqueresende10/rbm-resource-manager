@@ -1,9 +1,8 @@
-
-import Form from 'components/atoms/form/form-index'
+import InputContainer from 'components/atoms/input-container/input-container-index'
+import Section from 'components/atoms/section/section-index'
 import Header from 'components/molecules/header/header-index'
 import Main from 'components/molecules/main/main-index'
 import Button from 'components/particles/button/button-index'
-import Input from 'components/particles/input/input-index'
 import Logo from 'components/particles/logo/logo-index'
 import React from 'react'
 
@@ -14,11 +13,12 @@ export default function Login() {
       <Logo />
     </Header>
     <Main>
-      <Form>
+      <Section>
         <Logo/>
-        <Input />
+        <InputContainer type="text" showLabel={true}>E-mail</InputContainer>
+        <InputContainer type="password" showLabel={true}>Senha</InputContainer>
         <Button>ENTRAR</Button>
-      </Form>
+      </Section>       
     </Main>
     </>
   )
