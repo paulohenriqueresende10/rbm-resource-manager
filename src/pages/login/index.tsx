@@ -16,7 +16,7 @@ export default function Login() {
       <Section>
         <Logo/>
         <InputContainer type="text" showLabel={true}>E-mail</InputContainer>
-        <InputContainer type="password" showLabel={true}>Senha</InputContainer>
+        <InputContainer placeholder="Digite a sua senha" type="password" showLabel={true}>Senha</InputContainer>
         <Button>ENTRAR</Button>
       </Section>       
     </Main>

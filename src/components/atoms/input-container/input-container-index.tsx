@@ -6,16 +6,17 @@ import * as Styled from './input-container-style'
 type InputContainerProps = {
     children : ReactNode;
     showLabel?: boolean;
+    placeholder?: string;
     type: "text" | "password";
 }
 
-export default function InputContainer({children, showLabel, type}: InputContainerProps) {
+export default function InputContainer({children, showLabel, type, placeholder}: InputContainerProps) {
   return (
     <Styled.StyledInputContainer >
         {showLabel &&
             <Label>{children}</Label>     
         }
-        <Input type={type} />
+        <Input type={type} placeholder={placeholder}/>
     </Styled.StyledInputContainer>
   )
 }
