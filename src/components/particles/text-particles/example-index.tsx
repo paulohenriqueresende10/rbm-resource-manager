@@ -3,10 +3,10 @@ import * as Styled from "./example-atom-style";
 import { Link } from "react-router-dom";
 import React from "react";
 
-export default function ExampleAtom() {
+export const ExampleAtom = (title:string) => {
   return (
       <Styled.StyledText as="h1" color="yellow">
-        Example
+        { title }
       </Styled.StyledText>
 
   );
