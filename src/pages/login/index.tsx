@@ -1,3 +1,4 @@
+import Container from 'components/atoms/container/container-index'
 import InputContainer from 'components/atoms/input-container/input-container-index'
 import Section from 'components/atoms/section/section-index'
 import Header from 'components/molecules/header/header-index'
@@ -14,6 +15,7 @@ export default function Login() {
       <Logo />
     </Header>
     <Main>
+      <Container />
       <Section>
         <Logo/>
         <InputContainer placeholder="Digite o seu e-mail" type="text" showLabel={true}>E-mail</InputContainer>
