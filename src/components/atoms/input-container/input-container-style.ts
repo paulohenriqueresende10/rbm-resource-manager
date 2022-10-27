@@ -5,4 +5,5 @@ export const StyledInputContainer = styled.div`
     justify-content: center;
     flex-direction: column;
     gap: 4px;
+    width: 100%
 `;
