@@ -20,7 +20,7 @@ export default function InputContainer({children, showLabel, type, placeholder}:
         } 
         <Input type={type} placeholder={placeholder }/>
         {type==='password' &&
-        <EyeIcon/>}
+        <EyeIcon />}
     </Styled.StyledInputContainer>
     </>
     

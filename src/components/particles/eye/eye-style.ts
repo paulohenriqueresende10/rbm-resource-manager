@@ -6,9 +6,9 @@ import ClosedEyeIcon from '../../../assets/svg/closedEye-icon';
 export const StyledSpan = styled.span`
     cursor: pointer;
     width: 15px;
-    position: absolute;
-    margin-left: 400px;
-    margin-top: 30px;
+    position: relative;
+    left: 294px;
+    top: -40px;
 `;
 
 export const StyledOpenEye = styled(OpenEyeIcon)`
