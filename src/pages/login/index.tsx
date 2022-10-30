@@ -4,7 +4,6 @@ import Section from 'components/atoms/section/section-index'
 import Header from 'components/molecules/header/header-index'
 import Main from 'components/molecules/main/main-index'
 import Button from 'components/particles/button/button-index'
-import Label from 'components/particles/label/label-index'
 import Logo from 'components/particles/logo/logo-index'
 import React from 'react'
 
