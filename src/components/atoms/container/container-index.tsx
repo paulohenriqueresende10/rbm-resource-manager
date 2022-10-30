@@ -1,33 +1,64 @@
 import React from 'react'
 import * as Styled from './container-style';
-
 import List from 'components/particles/list/list-index';
-import Paragraph from 'components/particles/paragraph/paragraph-index';
 import Text from 'components/particles/text/text-index';
 
-export default function Container({...children}) {
+export default function Container() {
   return (
     <Styled.StyledContainer>
-      <Styled.StyledText as="h1" color="#0092D4">
+      <Text 
+        as="h1" 
+        color="#0092D4"
+        fontWeight="700"
+        fontSize="62.1797px"
+        lineHeight="93px"
+      >
         Lorem ipsum
-      </Styled.StyledText>
-      <Styled.StyledSubtitle as="h3">
+      </Text>
+      <Text 
+        as="h3"
+        fontWeight="400"
+        fontSize="31.0898px"
+        lineHeight="31px"
+      >
         Lorem ipsum 🚀
-      </Styled.StyledSubtitle>
+      </Text>
 
       <Styled.StyledContent>
-        <Text title='Lorem'/>
+        <Text
+          color='#0092D4'
+          as='p'
+        >
+          Lorem
+        </Text>
         <Styled.StyledCircle/>
-        <Text title='Lorem'/>
+          <Text
+            color='#0092D4'
+            as='p'
+          >
+            Lorem
+          </Text>
         <Styled.StyledCircle/>
-        <Text title='Lorem'/>
-        <Styled.StyledCircle/>
-        <Text title='Lorem'/>
-      </Styled.StyledContent>
-      
-      <Paragraph title="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."></Paragraph>
-      <Paragraph title='Equipe'></Paragraph>
-
+          <Text
+              color='#0092D4'
+              as='p'
+          >
+              Lorem
+          </Text>
+        <Styled.StyledCircle/>       
+      </Styled.StyledContent>     
+      <Text
+       as="p"
+       padding="1rem 0"
+      >
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+      </Text>
+      <Text
+        as="p"
+        padding="1rem 0"
+      >
+        Equipe
+      </Text>
       <List/>
     </Styled.StyledContainer>
   )

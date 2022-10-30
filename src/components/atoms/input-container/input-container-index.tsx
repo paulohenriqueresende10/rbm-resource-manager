@@ -22,7 +22,6 @@ export default function InputContainer({children, showLabel, type, placeholder}:
     },[isEyeOpen])
 
   return (
-    <>
     <Styled.StyledInputContainer >
         {showLabel &&
             <Label>{children}</Label>     
@@ -32,8 +31,6 @@ export default function InputContainer({children, showLabel, type, placeholder}:
         <EyeIcon
         isEyeOpen={isEyeOpen}
         setIsEyeOpen={setIsEyeOpen}/>}
-    </Styled.StyledInputContainer>
-    </>
-    
+    </Styled.StyledInputContainer> 
   )
 }
