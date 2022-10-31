@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { THEME } from "contants";
+import { THEME } from "../../../constants";
 import OpenEyeIcon from '../../../assets/svg/openEye-icon';
 import ClosedEyeIcon from '../../../assets/svg/closedEye-icon';
 
