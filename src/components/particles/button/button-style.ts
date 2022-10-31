@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { THEME } from "contants";
+import { THEME } from "../../../constants";
 
 export const StyledButton = styled.button`
   cursor: pointer;
