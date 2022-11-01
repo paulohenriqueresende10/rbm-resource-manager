@@ -7,7 +7,11 @@ export default function useLocalStorage<Return>(
   key: LocalStorageNamespaces
 ): [Return, Dispatch<SetStateAction<Return>>] {
   const [localStorageState, setLocalStorageState] = useState(() => {
-    return JSON.parse(localStorage.getItem(key) ?? "");
+    try {
+      return JSON.parse(localStorage.getItem(key) ?? "");
+    } catch {
+      return undefined;
+    }
 });
 
   useEffect(() => {
