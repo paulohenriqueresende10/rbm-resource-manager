@@ -15,12 +15,8 @@ export default function Login() {
   });
   const { login } = useAuth();
 
-  function handleLogin() {
-    if (form.login === "paulo" && form.password === "1234") {
-      login();
-      return;
-    }
-    alert("incorret password");
+  const handleLogin = () => {
+    login(form.login, form.password);
   }
 
   return (
