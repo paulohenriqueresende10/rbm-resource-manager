@@ -1,8 +1,8 @@
 import { ReactNode, createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { useLocation, useNavigate } from "react-router";
 
 import { LocalStorageAuth } from "types/local-storage";
 import useLocalStorage from "hooks/useLocalStorage";
-import { useNavigate } from "react-router";
 import axiosInstance from "services/axios";
 
 type AuthContextProps = {
@@ -25,6 +25,8 @@ export default function AuthContextProvider({ children }: AuthContextProps) {
     return localStorageAuth ? true : false
   });
 
+  const location = useLocation();
+
   const logout = useCallback(() => {
     setLocalStorageAuth(null);
     setLoggedIn(false);
@@ -32,11 +34,13 @@ export default function AuthContextProvider({ children }: AuthContextProps) {
   }, [navigate, setLoggedIn, setLocalStorageAuth]);
 
   const login = useCallback(async (login: string, password: string) => {
-    const request = await axiosInstance.post("/login", { login: login, senha: password });
-    const data = request.data;
-    setLocalStorageAuth(data);
-    setLoggedIn(true);
-    navigate("/dashboard");
+    try {
+      const request = await axiosInstance.post("/login", { login: login, senha: password });
+      const data = request.data;
+      setLocalStorageAuth(data);
+    } catch {
+      alert("senha errada");
+    }
   }, [navigate, setLocalStorageAuth]);
 
   const value = useMemo(
@@ -48,6 +52,14 @@ export default function AuthContextProvider({ children }: AuthContextProps) {
     }),
     [localStorageAuth, logout, login, loggedIn]
   );
+
+  useEffect(() => {
+    if (loggedIn && location.pathname === "/") {
+      navigate("/dashboard");
+    } else if (!loggedIn && location.pathname !== "/") {
+      navigate("/");
+    }
+  }, [location, loggedIn]);
 
   useEffect(() => {
     if (localStorageAuth) {

@@ -2,7 +2,6 @@ import { createGlobalStyle } from "styled-components";
 import { Route, Routes } from "react-router";
 import AuthContextProvider from "contexts/auth-context";
 import ThemeContext from "contexts/theme-context";
-import ProtectedRoute from "hocs/protected-route";
 import useTheme from "hooks/useTheme";
 import Login from "pages/login";
 import Dashboard from "pages/dashboard";
@@ -16,9 +15,7 @@ function App() {
       <AuthContextProvider>
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route element={<ProtectedRoute />}>
             <Route index path="/dashboard" element={<Dashboard />} />
-          </Route>
         </Routes>
       </AuthContextProvider>
     </ThemeContext>
