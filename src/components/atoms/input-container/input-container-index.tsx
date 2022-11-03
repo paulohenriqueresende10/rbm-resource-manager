@@ -1,3 +1,4 @@
+import CloseAlert from 'components/particles/alert-button/alert-button-index'
 import EyeIcon from 'components/particles/eye/eye-index'
 import Input from 'components/particles/input/input-index'
 import Label from 'components/particles/label/label-index'

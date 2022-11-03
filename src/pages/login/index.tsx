@@ -1,3 +1,4 @@
+import AlertContainer from 'components/atoms/alert-container/alert-container-index'
 import Container from 'components/atoms/container/container-index'
 import InputContainer from 'components/atoms/input-container/input-container-index'
 import Section from 'components/atoms/section/section-index'
@@ -27,6 +28,8 @@ export default function Login() {
     <Main>
       <Container />
       <Section>
+      <AlertContainer
+        error/>
         <Logo/>
         <InputContainer 
           placeholder="Digite o seu e-mail" 

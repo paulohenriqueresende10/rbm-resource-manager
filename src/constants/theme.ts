@@ -14,11 +14,17 @@ export const THEME = {
       success1: "##76D8A3",
       success2: "#2DC071",
 
-      alert1: "#E77C40",
+      alert1: "#FFF6EF",
       alert2: "#E77C40",
 
-      error1:  "#DF1E1E",
+      error1:  "#FFDEDE",
       error2: "#E0232E",
+
+      notification1: "#F8FAFF",
+      notification2: "#23A6F0",
+
+      info1: "#F3F3F3",
+      info2: "#252B42",
     },
   },
   dark: {
@@ -36,11 +42,17 @@ export const THEME = {
       success1: "##76D8A3",
       success2: "#2DC071",
 
-      alert1: "#E77C40",
+      alert1: "#FFF6EF",
       alert2: "#E77C40",
 
-      error1:  "#DF1E1E",
+      error1:  "#FFDEDE",
       error2: "#E0232E",
+
+      notification1: "#F8FAFF",
+      notification2: "#23A6F0",
+
+      info1: "#F3F3F3",
+      info2: "#252B42",
     },
   },
 };
