@@ -4,6 +4,7 @@ import InputContainer from 'components/atoms/input-container/input-container-ind
 import Section from 'components/atoms/section/section-index'
 import Header from 'components/molecules/header/header-index'
 import Main from 'components/molecules/main/main-index'
+import ActionLogin from 'components/particles/action-login/action-login-index'
 import Button from 'components/particles/button/button-index'
 import Logo from 'components/particles/logo/logo-index'
 import { useAuth } from "contexts/auth-context";
@@ -46,6 +47,7 @@ export default function Login() {
           onChange={(e) => setForm((prev) => ({ ...prev, password: e.target.value }))}
         >
           Senha</InputContainer>
+        <ActionLogin></ActionLogin>
         <Button
           onClick={handleLogin}
         >ENTRAR
