@@ -32,7 +32,6 @@ export const GlobalStyle = createGlobalStyle`
       margin: 0;
     }
     body, html, #root {
-      height: 100%;
       font-family: poppins, sans-serif;
     };
 `;
