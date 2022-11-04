@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyledAlertContainer } from './alert-container-style';
 import CloseAlertButton from '../../../assets/svg/closeButton-icon'
 import Text from 'components/particles/text/text-index';
@@ -8,6 +8,7 @@ import errorSvg from '../../../assets/svg/error.svg';
 import notificationSvg from '../../../assets/svg/notification.svg';
 import warningSvg from '../../../assets/svg/warning.svg';
 import CloseAlert from 'components/particles/alert-button/alert-button-index';
+import { useAuth } from "contexts/auth-context";
 
 type AlertProps = {
     success?: boolean;
@@ -18,7 +19,7 @@ type AlertProps = {
 }
 
 export default function AlertContainer({success, notification, error, warning, info }: AlertProps){
-    const [visible, setVisible] = useState(true);
+    const { visible, setVisible } = useAuth();
 
     const whichSvg = ()=>{
         if(success){
@@ -39,19 +40,26 @@ export default function AlertContainer({success, notification, error, warning, i
     }
 
     return(
-        <StyledAlertContainer
-        success={success}
-        notification={notification}
-        error={error}
-        warning={warning}
-        info={info}
-        visible={visible}
-        >
+    <>
+        {visible && 
+            <StyledAlertContainer
+                success={success}
+                notification={notification}
+                error={error}
+                warning={warning}
+                info={info}
+            >
             <img src={whichSvg()}/>
             <Text
-            as='span'>Exemplo de alerta</Text>
+                as='span'
+            >
+                Exemplo de alerta
+            </Text>
             <CloseAlert
             onClick={handleCloseAlert}/>
         </StyledAlertContainer>
+        }
+    </>
+        
     );
 }

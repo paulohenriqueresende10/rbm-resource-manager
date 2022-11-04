@@ -14,7 +14,7 @@ type AlertContainerProps={
 export const StyledAlertContainer = styled.div<AlertContainerProps>`
     display: flex;
     height: 58px;
-    width: 410px;
+    width: 100%;
     align-items: center;
     padding: 0px 5px 0px 5px;
     ${({success}) => success && StyledSuccessContainer};
@@ -23,14 +23,9 @@ export const StyledAlertContainer = styled.div<AlertContainerProps>`
     ${({warning}) => warning && StyledWarningContainer};
     ${({info}) => info && StyledInfoContainer};
     
-    ${({visible})=>{
-        return css`
-        display: ${visible ? 'flex' : 'none'};
-        `;
-    }};
-        img{
-            margin-right: 5px;
-        }
+    img{
+        margin-right: 5px;
+    }
 `;
 
 export const StyledSuccessContainer = css`

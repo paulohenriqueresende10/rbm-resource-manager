@@ -14,6 +14,8 @@ type UseAuth = {
   login: (login: string, password: string) => void;
   localStorageAuth: LocalStorageAuth;
   loggedIn: boolean;
+  visible: boolean;
+  setVisible: (value: boolean) => void
 };
 
 const AuthContext = createContext({} as UseAuth);
@@ -24,6 +26,7 @@ export default function AuthContextProvider({ children }: AuthContextProps) {
   const [loggedIn, setLoggedIn] = useState(()=> {
     return localStorageAuth ? true : false
   });
+  const [visible, setVisible] = useState(false);
 
   const location = useLocation();
 
@@ -39,7 +42,7 @@ export default function AuthContextProvider({ children }: AuthContextProps) {
       const data = request.data;
       setLocalStorageAuth(data);
     } catch {
-      alert("senha errada");
+      setVisible(true);
     }
   }, [navigate, setLocalStorageAuth]);
 
@@ -49,8 +52,10 @@ export default function AuthContextProvider({ children }: AuthContextProps) {
       login,
       localStorageAuth,
       loggedIn,
+      visible,
+      setVisible
     }),
-    [localStorageAuth, logout, login, loggedIn]
+    [localStorageAuth, logout, login, loggedIn, visible,setVisible]
   );
 
   useEffect(() => {
