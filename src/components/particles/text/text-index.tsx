@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ComponentPropsWithoutRef, ReactNode } from 'react';
 import * as Styled from './text-style'
 
 export type TextProps = {
@@ -11,7 +11,7 @@ export type TextProps = {
 	margin?:string;
     lineHeight?: string;
     padding?: string;
-}
+} & ComponentPropsWithoutRef<'input'>
 
 export default function Text(props: TextProps) {
     return (
