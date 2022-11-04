@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { THEME } from "contants";
+import { THEME } from "../../../constants";
 
 export const StyledHeader = styled.header`
     height: 51px;

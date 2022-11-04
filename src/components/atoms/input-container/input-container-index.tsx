@@ -1,3 +1,4 @@
+import CloseAlert from 'components/particles/alert-button/alert-button-index'
 import EyeIcon from 'components/particles/eye/eye-index'
 import Input from 'components/particles/input/input-index'
 import Label from 'components/particles/label/label-index'
@@ -9,9 +10,11 @@ type InputContainerProps = {
     showLabel?: boolean;
     placeholder?: string;
     type: "text" | "password" | any;
+    value?: string;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export default function InputContainer({children, showLabel, type, placeholder}: InputContainerProps) {
+export default function InputContainer({children, showLabel, type, placeholder, value, onChange}: InputContainerProps) {
 
   const [isEyeOpen, setIsEyeOpen] = useState<boolean>(false);
   const [ inputType, setInputType] = useState<'text' | 'password'>('password')
@@ -26,7 +29,7 @@ export default function InputContainer({children, showLabel, type, placeholder}:
         {showLabel &&
             <Label>{children}</Label>     
         } 
-        <Input type={inputType} placeholder={placeholder}/>
+        <Input type={type === "text"? type :inputType} placeholder={placeholder} value={value} onChange={onChange}/>
         {type==='password' &&
         <EyeIcon
         isEyeOpen={isEyeOpen}

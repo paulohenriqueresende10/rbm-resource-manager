@@ -1,21 +1,23 @@
 import { createGlobalStyle } from "styled-components";
 import { Route, Routes } from "react-router";
-import { BrowserRouter } from "react-router-dom";
+import AuthContextProvider from "contexts/auth-context";
 import ThemeContext from "contexts/theme-context";
 import useTheme from "hooks/useTheme";
 import Login from "pages/login";
+import Dashboard from "pages/dashboard";
 
 function App() {
-  const { theme, setTheme } = useTheme();
+  const { theme } = useTheme();
   return (
     <>
     <GlobalStyle />
     <ThemeContext theme={theme}>
-      <BrowserRouter>
+      <AuthContextProvider>
         <Routes>
           <Route path="/" element={<Login />} />
+            <Route index path="/dashboard" element={<Dashboard />} />
         </Routes>
-      </BrowserRouter>
+      </AuthContextProvider>
     </ThemeContext>
     </>
   );
