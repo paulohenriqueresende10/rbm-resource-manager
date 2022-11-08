@@ -1,6 +1,7 @@
 import AlertContainer from 'components/atoms/alert-container/alert-container-index'
 import Container from 'components/atoms/container/container-index'
 import InputContainer from 'components/atoms/input-container/input-container-index'
+import Text from 'components/particles/text/text-index'
 import Section from 'components/atoms/section/section-index'
 import Header from 'components/molecules/header/header-index'
 import Main from 'components/molecules/main/main-index'
@@ -33,6 +34,8 @@ export default function Login() {
       <AlertContainer
         error/>
         <Logo/>
+        <Text as='h3' fontSize='20px' fontWeight='700' lineHeight='26px'>Entrar na minha conta</Text>
+        <Text as='label' fontSize='14px' fontWeight='400' lineHeight='21px'>Acesse sua conta abaixo =)</Text>
         <InputContainer 
           placeholder="Digite o seu e-mail" 
           type="text" 
@@ -53,6 +56,7 @@ export default function Login() {
           onClick={handleLogin}
         >ENTRAR
         </Button>
+        <Text as='label' fontSize='14px' fontWeight='400' lineHeight='21px'><u>Primeiro acesso? <b>Ative sua conta.</b></u></Text>
       </Section>       
     </Main>
   </Wrapper>
